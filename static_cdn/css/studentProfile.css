@@ -1,0 +1,90 @@
+div.profile_row .profile{
+    /* background: rgb(160, 156, 156); */
+    flex-basis: 40%;
+    box-shadow: 1px 1px 2px 4px  rgb(244, 241, 241);
+}
+
+div.profile_row .profile .main_profile{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgb(223, 119, 27);
+    padding: 10px 0;
+}
+
+div.profile_row .profile .main_profile .profile_img{
+   /* background: rgb(230, 91, 91); */
+   margin-top: 5px;
+   padding: -9px;
+   width: 20%;
+}
+
+div.profile_row .profile .main_profile .profile_img img{
+   width: 100%;
+   border-radius: 50px;
+}
+
+.name{
+    margin-top: 5px;
+}
+
+.name a{
+    text-decoration: none;
+    color: white;
+}
+
+.profile_nav{
+    margin-bottom: 10px;
+}
+.profile_nav .profile_nav_row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background: rgb(227, 224, 221);
+
+}
+
+.profile_nav .profile_nav_row a{
+    padding: 5px 5px;
+    color: rgb(137, 102, 12);
+    font-size: 20px;
+    text-decoration: none;
+    
+}
+.profile_nav .profile_nav_row a:hover{
+    color: rgb(118, 87, 9);
+   
+    
+}
+
+
+div.profile_row .profile .about_profile{
+    /* margin-top: 10px; */
+    /* background: rgb(188, 29, 122); */
+    background: rgb(36, 120, 165);
+    display: flex;
+    flex-direction: column;
+    /* align-items: flex-start; */
+}
+
+.skills_items{ 
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    /* align-items: center; */
+    justify-content: center;
+}
+.fun_thing{
+    /* background: rgb(148, 135, 83); */
+}
+.skills li.skill {
+    list-style: none;
+    /* background: rgb(74, 65, 65); */
+}
+
+
+
+
+
+

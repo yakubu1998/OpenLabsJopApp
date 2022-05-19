@@ -1,0 +1,106 @@
+{% extends './base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block content %}
+<div>
+    {% if object.company == user %}
+    <a href="{% url 'postJobUpdate' object.id %}">
+        <button>Update</button>
+    </a>
+    <a href="{% url 'postJobDelete' object.id %}">
+        <button>Delete</button>
+    </a>
+    {% endif %}
+    <!-- <h1>I am details View</h1> -->
+    <h1>{{object.job_title}}</h1>
+    <h2>{{object.location}}</h2>
+    <h2>{{object.job_description}}</h2>
+    <h2>{{object.requirement}}</h2>
+    <h2>{{object.category}}</h2>
+    <h2>{{object.company.employerprofile.industry}}</h2>
+    <h2>{{object.date_posted|date:"F d, Y"}}</h2>
+</div>
+
+<div class="container rounded bg-white mt-5 mb-5">
+    <div class="row">
+        <div class="col-md-3 border-right">
+            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" src="https://i.imgur.com/O1RmJXT.jpg" width="90"><span class="font-weight-bold">John Doe</span><span class="text-black-50">john_doe12@bbb.com</span><span>United States</span></div>
+        </div>
+        <div class="col-md-9 border-right">
+            <div class="p-3 py-5">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h6 class="text-right">Edit your profile</h6>
+                </div>
+                <div class="row mt-2">
+                    
+                    <div class="col-md-6"><label class="labels">Title</label><input type="text" class="form-control" placeholder="first name" value="{{object.job_title}}"></div>
+                    <div class="col-md-6"><label class="labels">Company Name</label><input type="text" class="form-control" placeholder="Doe" value="{{object.location}}"></div>
+                </div>
+                <div class="row mt-3">
+                    <label class="labels">Job Description</label>
+                    <textarea name="experience" cols="40" rows="10" value="{{object.job_description}}" class="textarea form-control" id="id_experience">{{object.job_description}}</textarea>
+                </div>
+                <div class="row mt-3">
+                    <label class="labels">Job Requiments</label>
+                    <textarea name="experience" cols="40" rows="10" value="{{object.requirement}}" class="textarea form-control" id="id_experience"><h2>{{object.requirement}}</h2></textarea>
+                </div>
+               
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container bg-white mt-7 mb-7">
+    <div class="row">
+        <div class="col-md-6 border-right">
+            <form method="post">
+                {% csrf_token %}
+                <div class="p-3 py-5">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h6 class="text-center">File in the form to apply</h6>
+                    </div>
+
+                    <div class="row mt-3">
+                        <div class="col-md-12">{{ applyForm.certificate|as_crispy_field }}</div>
+                        <div class="col-md-12">{{ applyForm.experience|as_crispy_field }}</div>
+                    </div>
+
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h6 class="text-center">NOTE: Before you apply make sure to update your CV</h6>
+                    </div>
+
+                    <div class="mt-5 text-center"><button class="btn btn-primary profile-button"
+                            type="submit">Apply</button></div>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-6">
+            <img src="{% static 'img/office.svg' %}" alt="Image" class="img-fluid">
+        </div>
+
+    </div>
+</div>
+{% endblock content %}

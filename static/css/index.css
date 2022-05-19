@@ -1,0 +1,39 @@
+body {
+    background: rgb(223, 213, 213) !important;
+}
+
+nav a {
+    /* background: white !important; */
+    color: black !important;
+}
+
+.bg {
+    /* background: rgb(6, 6, 239); */
+    
+    background: rgb(195, 183, 183) url('../img/openlabs.jpg');
+    height: 100vh;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bg_title{
+    margin: 0 auto;
+    padding-top: 20px;
+    width: 30%;
+    color: white;
+
+}
+
+/* section containing job and intenship  */
+.job-intenship {
+    /* height: 50vh; */
+    margin-top: 40px;
+    margin-bottom: 70px;
+}
+
+.job-post-item {
+    margin-bottom: 10px;
+    transition: all .3s ease;
+}
+

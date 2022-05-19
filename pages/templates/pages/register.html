@@ -1,0 +1,87 @@
+{% extends './base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <img src="{% static 'img/office.svg' %}" alt="Image" class="img-fluid">
+        </div>
+        <div class="col-md-6 contents">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="mb-4">
+                        <h3>Employer/Alumni/Student</h3>
+                        <p class="mb-4">
+                            {% for field in UserRegistration_error %}
+                            <p>
+                                {% for error in field.errors %}
+                                <p style="color: red; font-size: 18px ;">{{error}}</p>
+                                {% endfor %}
+                            </p>
+                        {% endfor %}
+                        </p>
+                    </div>
+                    <form action="#" method="post">
+                        {% csrf_token %}
+                        <!-- <div class="form-group first field--not-empty">
+                            <label for="username">First Name</label>
+                            <input type="text" class="form-control" id="username">
+                        </div> -->
+  
+                        <!-- <div class="form-group first field--not-empty">
+                            <label for="username">Last Name</label>
+                            <input type="text" class="form-control" id="username">
+                        </div> -->
+  
+                        <div class="form-group first field--not-empty">
+                            <label for="email">Email</label>
+                            <input type="text" name="email" class="form-control" id="email">
+                        </div>
+  
+                        <div class="form-group first field--not-empty">
+                            <label for="contact">Contact</label>
+                            <input type="text" name="contact" class="form-control" id="contact">
+                        </div>
+  
+                        <div class="form-group first field--not-empty">
+                            <label for="gender">Register Us</label>
+                            <select name="usertype" id="usertype">
+                                <option value="Employer">Employer</option>
+                                <option value="Alumni">Alumni</option>
+                                <option value="Student">Student</option>
+                            </select>
+                        </div>
+  
+                        <div class="form-group last mb-4 field--not-empty">
+                            <label for="password">Password</label>
+                            <input type="password" name="password1" class="form-control" id="password">
+                        </div>
+                        <div class="form-group last mb-4 field--not-empty">
+                            <label for="password">Confirm Password</label>
+                            <input type="password" name="password2" class="form-control" id="password">
+                        </div>
+                        <div class="d-flex mb-5 align-items-center">
+                            <!-- <label class="control control--checkbox mb-0"><span class="caption">Remember me</span>
+                                <input type="checkbox" checked="">
+                                <div class="control__indicator"></div>
+                            </label> -->
+                            <span class="ml-auto"><a href="#" class="forgot-pass">Forgot Password</a></span>
+                        </div>
+                        <input type="submit" value="Register" class="btn btn-block btn-primary">
+                        {% for field in UserRegistration_error %}
+                        <p>
+                            {% for error in field.errors %}
+                            <p style="color: red;">{{error}}</p>
+                            {% endfor %}
+                        </p>
+                        {% endfor %}
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock content %}  

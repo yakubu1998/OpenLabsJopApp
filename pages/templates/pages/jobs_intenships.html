@@ -1,0 +1,93 @@
+{% extends './base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="bg">
+   <h1 class="bg_title">We help you find the right jobs/intenships</h1>
+
+   <div class="banner_search">
+
+   </div>
+</div>
+<div class="container">
+   <div class="row justify-content-center mb-5 pb-3">
+      <div class="col-md-7 heading-section text-center ftco-animate fadeInUp ftco-animated">
+         <span class="subheading">Recently Added Jobs</span>
+         <h2 class="mb-4"><span>Available</span> Jobs</h2>
+      </div>
+   </div>
+   <div class="row">
+      {% for post in posts %}
+
+      <div class="col-md-12 ftco-animate fadeInUp ftco-animated">
+         <div class="job-post-item bg-white p-4 d-block d-md-flex align-items-center">
+            <div class="mb-4 mb-md-0 mr-5">
+               <div class="job-post-item-header d-flex align-items-center">
+                  <a style="color:black !important" href="{% url 'postDetail' post.id %}">
+                     <h2 class="mr-3 text-black h3">{{ post.job_title }}</h2>
+                  </a>
+                  <div class="badge-wrap">
+                     <span class="bg-primary text-white badge py-2 px-3">{{ post.category }}</span>
+                  </div>
+               </div>
+               <div class="job-post-item-body d-block d-md-flex">
+                  <div class="mr-3"><span class="icon-layers"></span> <a
+                        href="{% url 'employerProfileJobs' post.company.id %}">{{ post.company.employerprofile }}</a>
+                  </div>
+                  <div><span class="icon-my_location"></span> <span>{{ post.location }}</span></div>
+               </div>
+            </div>
+            <div class="ml-auto d-flex">
+               <a href="{% url 'postDetail' post.id %}" class="btn btn-primary py-2 mr-1">Apply Job</a>
+
+            </div>
+         </div>
+      </div>
+
+
+      {% endfor %}
+
+
+
+      {% if is_paginated %}
+      <div class="pagination" style="width: 100 !important; text-align: center !important;">
+
+         {% if page_obj.has_previous %}
+         <a class="btn btn-primary" href="?page=1">First</a>
+         <a class="btn btn-secondary" href="?page={{ page_obj.previous_page_number }}">previous</a>
+         {% endif %}
+
+
+         {% for num in page_obj.paginator.page_range%}
+
+         {% if page_obj.number == num %}
+         <a href="?page={{ num }}">{{ num }}</a>
+         {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3'%} <a style="color:red ;"
+            href="?page={{ num }}">{{ num }}</a>
+            {% endif %}
+
+            {% endfor %}
+
+
+            {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}"><button>Next</button></a>
+            <a href="?page={{ page_obj.paginator.num_pages }}"><button>Last</button></a>
+            {% endif %}
+
+
+
+
+      </div>
+      {% endif %}
+
+
+   </div>
+</div>
+
+
+
+
+
+
+
+{% endblock content %}

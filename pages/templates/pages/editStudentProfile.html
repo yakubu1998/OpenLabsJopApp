@@ -1,0 +1,39 @@
+{% extends './base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block content %}
+<!-- <h1>him Edit {{request.user.contact}}</h1> -->
+
+<div class="col-lg-10 m-auto"> 
+    <div class="card-body p-md-5 mx-md-4">
+        <div class="text-center">
+            <h4 class="mt-1 mb-5 pb-1">Personal Information</h4>
+           
+        </div>
+
+        <form method="POST" enctype="multipart/form-data">
+             {% csrf_token %}
+            <!-- <p>Please login to your account</p> -->
+            {{ updateUser|crispy }}
+            {{ updateform|crispy }}
+                     
+            <div class="text-center pt-1 mb-5 pb-1">
+                
+                <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3"
+                    type="submit">
+                    Update
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+{% endblock content %}

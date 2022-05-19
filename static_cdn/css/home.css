@@ -1,0 +1,21 @@
+h1{
+  
+    margin: 0 auto;
+    padding-top: 20px;
+    width: 30%;
+    color: white;
+}
+
+
+.bg{
+    background: rgb(6, 6, 239);
+    /* background:rgb(6, 6, 239) url('../img/openlabs.jpg'); */
+    height: 65vh;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.uploaded_jobs_profile .uploaded_jobs .company_logo{
+    width: 100%;
+}

@@ -1,0 +1,302 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>AdminLTE 2 | Log in</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.7 -->
+    <link rel="stylesheet" href="{% static 'bootstrap/css/dashboard-bootstrap.min.css' %}">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="{% static 'font-awesome/css/font-awesome.min.css' %}">
+    <!-- DataTables -->
+    <link rel="stylesheet" href="{% static 'datatable/css/dataTables.bootstrap.min.css' %}">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="{% static 'bootstrap/css/ionicons.min.css' %}">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="{% static 'bootstrap/css/AdminLTE.min.css' %}">
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+    <link rel="stylesheet" href="{% static 'bootstrap/css/_all-skins.min.css' %}">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+    <!-- Google Font -->
+    <!-- <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic"> -->
+</head>
+
+<body class="hold-transition skin-blue fixed sidebar-mini">
+    <!-- Site wrapper -->
+    <div class="wrapper">
+
+        <header class="main-header">
+            <!-- Logo -->
+            <a href="" class="logo">
+                <!-- mini logo for sidebar mini 50x50 pixels -->
+                <span class="logo-mini"><b>O</b>PL</span>
+                <!-- logo for regular state and mobile devices -->
+                <span class="logo-lg"><b>Open</b>Laps</span>
+            </a>
+            <!-- Header Navbar: style can be found in header.less -->
+            <nav class="navbar navbar-static-top">
+                <!-- Sidebar toggle button-->
+                <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+                    
+                </a>
+
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+                        
+                        <!-- User Account: style can be found in dropdown.less -->
+                        <li class="dropdown user user-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <img src="" class="user-image" alt="User Image">
+                                <span class="hidden-xs">Alexander Pierce</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <!-- User image -->
+                                <li class="user-header">
+                                    <img src="" class="img-circle" alt="User Image">
+
+                                    <!-- <p>
+                                        Alexander Pierce - Web Developer
+                                        <small>Member since Nov. 2012</small>
+                                    </p> -->
+                                </li>
+                                <!-- Menu Body -->
+                                <!-- <li class="user-body">
+                                    <div class="row">
+                                        <div class="col-xs-4 text-center">
+                                            <a href="#">Followers</a>
+                                        </div>
+                                        <div class="col-xs-4 text-center">
+                                            <a href="#">Sales</a>
+                                        </div>
+                                        <div class="col-xs-4 text-center">
+                                            <a href="#">Friends</a>
+                                        </div>
+                                    </div>
+                                    
+                                </li> -->
+                                <!-- Menu Footer-->
+                                <li class="user-footer">
+                                    <div class="pull-left">
+                                        <a href="#" class="btn btn-default btn-flat">Main Page</a>
+                                    </div>
+                                    <div class="pull-right">
+                                        <a href="#" class="btn btn-default btn-flat">Log out</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- Control Sidebar Toggle Button -->
+                        <li>
+                            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <!-- =============================================== -->
+
+        <!-- Left side column. contains the sidebar -->
+        <aside class="main-sidebar">
+            <!-- sidebar: style can be found in sidebar.less -->
+            <section class="sidebar">
+                <!-- Sidebar user panel -->
+                <div class="user-panel">
+                    <div class="pull-left image">
+                        <img src="" class="img-circle" alt="User Image">
+                    </div>
+                    <div class="pull-left info">
+                        <p>Alexander Pierce</p>
+                        <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+                    </div>
+                </div>
+                <!-- search form -->
+                <form action="#" method="get" class="sidebar-form">
+                    <div class="input-group">
+                        <input type="text" name="q" class="form-control" placeholder="Search...">
+                        <span class="input-group-btn">
+                            <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i
+                                    class="fa fa-search"></i>
+                            </button>
+                        </span>
+                    </div>
+                </form>
+                <!-- /.search form -->
+                <!-- sidebar menu: : style can be found in sidebar.less -->
+                <ul class="sidebar-menu" data-widget="tree">
+                    <li class="header">PUPILS INFOR</li>
+                    <!-- <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-edit"></i> <span>Registration Forms</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href=""><i class="fa fa-circle-o"></i>Student</a></li>
+                            <li><a href=""><i class="fa fa-circle-o"></i>Teacher</a>
+                            </li>
+                            <li><a href=""><i class="fa fa-circle-o"></i>Staff</a></li>
+                        </ul>
+                    </li> -->
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-list"></i> <span>Pupils List</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="{% url 'studentList' %}"><i class="fa fa-circle-o"></i>Students</a></li>
+                            <li><a href="{% url 'aluminList' %}"><i class="fa fa-circle-o"></i>Alumin</a>
+                            </li>
+                            <li><a href="{% url 'employerList' %}"><i class="fa fa-circle-o"></i>employers</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="header">JOBS & INTENSHIPS</li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-building"></i> <span>Jobs</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="{% url 'jobUploaded' %}"><i class="fa fa-circle-o"></i>Jobs Uploaded</a></li>
+                            <li><a href="{% url 'jobApplied' %}"><i class="fa fa-circle-o"></i>Jobs Applied</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-building"></i> <span>Intenships</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="{% url 'uploadedIntenships' %}"><i class="fa fa-circle-o"></i> Uploaded Intenships</a></li>
+                            <li><a href=""><i class="fa fa-circle-o"></i>Applied Intenships </a>
+                            </li>
+                        </ul>
+                    </li>
+
+
+                    <li class="header">Career Development</li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-edit"></i> <span>Career</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="{% url 'addCareer' %}"><i class="fa fa-plus"></i>Add</a></li>
+                            <li><a href="{% url 'listCareer' %}"><i class="fa fa-eye"></i>View List</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+            <!-- /.sidebar-->
+        </aside>
+
+        <!-- =============================================== -->
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            {% block content %}
+
+
+
+            {% endblock content %}            
+        <!--end of Content Wrapper. Contains page content -->
+        </div>    
+
+    <!-- end of wrapper / site wrapper          -->
+    </div>   
+    
+    <!-- jQuery 3 -->
+    <script src="{% static 'bootstrap/js/jquery3.6.0.min.js' %}"></script>
+    <!-- Bootstrap 3.3.7 -->
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+    <!-- DataTables -->
+    <script src="{% static 'datatable/js/jquery.dataTables.min.js' %}"></script>
+    <script src="{% static 'datatable/js/dataTables.bootstrap.min.js' %}"></script>
+    <script src="{% static 'bootstrap/js/adminlte.min.js' %}"></script>
+    
+    <script>
+        // Datatable
+
+        // student datatable 
+        $(document).ready(function () {
+            $('#student_table').DataTable({
+                "order": [[0, "desc"]]
+            });
+        });
+        // or use $(function () {
+            //     $('#student_table').DataTable()
+            // })
+            
+
+        // Alumin datatable 
+        $(document).ready(function () {
+            $('#alumin_table').DataTable({
+                "order": [[0, "desc"]]
+            });
+        });
+
+
+        // Employer datatable 
+        $(document).ready(function () {
+            $('#employer_table').DataTable({
+                "order": [[0, "desc"]]
+            });
+        });
+
+
+        // Job Uploaded datatable 
+        $(document).ready(function () {
+            $('#jobUploaded_table').DataTable({
+                "order": [[0, "desc"]]
+            });
+        });
+
+
+        // Job Applied datatable 
+        $(document).ready(function () {
+            $('#jobApplied_table').DataTable({
+                "order": [[0, "desc"]]
+            });
+        });
+
+
+        // Uploaded Intenship datatable 
+        $(document).ready(function () {
+            $('#uploadedIntenship_table').DataTable({
+                "order": [[0, "desc"]]
+            });
+        });
+
+        // Datatable END
+   
+   </script>
+
+</body>
+</html>    
+    
