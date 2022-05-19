@@ -1,0 +1,57 @@
+{% extends './base.html' %}
+<!-- <div style="height: 50vh; background: #000;" >
+    <p>gdhsjk</p>
+</div>
+<h1>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat, consectetur! Asperiores, incidunt nam neque eveniet repellendus quisquam perspiciatis cumque molestiae odio sit perferendis? Soluta rerum, molestias alias assumenda repellat consequuntur.</h1> -->
+
+
+{% block content %}
+<div class="">
+    <div class="row justify-content-center">
+      <div class="card card-sigin">
+        <div class="card-body" style="background-color: #ee712e;">
+          <h1>Employer registration form</h1>
+                  <form method="post">{% csrf_token %}
+                      <div class="d-flex flex-column pb-3">
+                          <table>
+     
+                              <tr>
+                                <td><label for="email">Email:</label></td>
+                                <td><input type="text" name="email" id="email" placeholder="your email"></td>
+                              </tr>
+                              <tr>
+                                <td><label for="phoneNumber">Phone Number:</label></td>
+                                <td><input type="tel" name="contact"  id="phoneNumber"></td>
+                              </tr>
+                              <tr>
+                                <td><label for="userType">User Type</label></td>
+                                <td><input type="text" name="usertype"  id="userType" value="Employer"></td>
+                              </tr>
+                              <tr>
+                                <td><label for="password">Password:</label></td>
+                                <td><input type="password" name="password1" id="password"></td>
+                              </tr>
+                              <tr>
+                                <td><label for="password"> Confirm Password:</label></td>
+                                <td><input type="password" name="password2" id="confpassword"></td>
+                              </tr>
+                              
+                              <td colspan="2"><input type="submit" class="submit" value="Register" /></td>
+                              </tr>
+                            </table>
+
+                          {% for field in UserRegistration_error %}
+                          <p>
+                              {% for error in field.errors %}
+                              <p style="color: red;">{{error}}</p>
+                              {% endfor %}
+                          </p>
+                          {% endfor %}
+                      </div>
+                  </form>
+              </div>
+          </div>
+      </div>
+  </div>
+
+{% endblock content %}

@@ -1,0 +1,27 @@
+.button-container {
+  width: 60%;
+  /* background-color: blue; */
+  display: flex;
+  justify-content: flex-end;
+}
+
+.button {
+  padding: 19px 25px;
+  font-size: 14px;
+  border-radius: 0.4em;
+  color: white;
+  cursor: pointer;
+  transition: 0.1s all;
+  margin: 20px 20px;
+  margin-bottom: 20px;
+  margin-left: 300px;
+}
+.button-colored {
+  border: solid green;
+  background-color: green;
+}
+
+.button-colored:hover {
+  background-color: forestgreen;
+  border: solid forestgreen;
+}

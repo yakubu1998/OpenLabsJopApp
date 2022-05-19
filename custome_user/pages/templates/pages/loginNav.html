@@ -1,0 +1,80 @@
+{% load static %}
+
+<nav class="navbar navbar-expand-lg  ftco_navbar bg-white ftco-navbar-light scrolled awake" id="ftco-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="{% url 'home' %}">JobPortal</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="">i</span> Menu
+    </button>
+    <div class="collapse navbar-collapse" id="ftco-nav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active cta mr- ml-1 md-5 mt-2"><a href="{% url 'home' %}" class="nav-link">Home</a></li>
+        <li class="nav-item  cta mr- ml-1 md-5 mt-2"><a href="{% url 'jobsIntenships' %}"
+            class="nav-link">Jobs/Intenships</a></li>
+        <li class="nav-item cta mr- ml-1 md-5 mt-2"><a href="blog.html" class="nav-link">Career
+            Development</a></li>
+        <li class="nav-item cta mr-3 ml-1 md-5 mt-2"><a href="contact.html" class="nav-link">Feedback</a>
+        </li>
+
+        
+        {% if request.user.usertype == 'Employer' %}
+        <li class="nav-item cta mr- ml-1 md-5 mt-2 btn " style="color: white;  background-color: #ee712e;">
+          <a href=" {% url 'postNewJob' %}">
+            <!-- <button type="button" class="  me-3" style="color: white;  background-color: #ee712e;"> -->
+            Post Job
+            <!-- </button> -->
+          </a>
+        </li>
+        {% endif %}
+        
+        {% if request.user.usertype == 'Student' %}
+        <li class="nav-item cta mr-1 ml-2 md-5 mt-2"><a  href="{% url 'studentProfile' request.user.id %}">My profile</a></li>
+        {%endif%}
+
+        {% if request.user.usertype == 'Employer' %}
+        <li class="nav-item cta mr-1 ml-2 md-5 mt-2"><a class="dropdown-item" href="{% url 'employerProfile' request.user.id %}">My profile</a></li>
+        {% endif %}
+
+        <li class="nav-item cta mr-1 ml-2 md-5 mt-2"><a class="dropdown-item" href="{% url 'logoutUser' %}">Logout</a></li>
+
+        {% if request.user.usertype == 'Student' %}
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle hidden-arrow d-flex align-items-center" href="#"
+            id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+            <img src="{{request.user.studentprofile.profile_image.url }}" class="rounded-circle" height="32" alt="dfghj"
+              loading="lazy" />
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+            <!-- {% if request.user.usertype == 'Student' %} -->
+            <li><a class="dropdown-item" href="{% url 'studentProfile' request.user.id %}">My profile</a></li>
+            <!-- {% endif %} -->
+            <li><a class="dropdown-item" href="#">Settings</a></li>
+            <li><a class="dropdown-item" href="{% url 'logoutUser' %}">Logout</a></li>
+          </ul>
+        </li>
+        {% endif %}
+
+        {% if request.user.usertype == 'Employer' %}
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle hidden-arrow d-flex align-items-center" href="#"
+            id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+            <img src="{{request.user.employerprofile.profile_image.url }}" class="rounded-circle" height="32"
+              alt="dfghj" loading="lazy" />
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+            <!-- {% if request.user.usertype == 'Employer' %} -->
+            <li><a class="dropdown-item" href="{% url 'employerProfile' request.user.id %}">My profile</a></li>
+            <!-- {% endif %} -->
+            <li><a class="dropdown-item" href="#">Settings</a></li>
+            <li><a class="dropdown-item" href="{% url 'logoutUser' %}">Logout</a></li>
+          </ul>
+        </li>
+        {% endif %}
+        <!-- <li class="nav-item cta mr-md-2 btn" style="color: white;  background-color: red;"><a
+                        href="{% url 'postNewJob' %}" class="nav-link">Post a Job</a></li> -->
+        <!-- <li class="nav-item cta cta-colored"><a href="job-post.html" class="nav-link">Want a Job</a></li> -->
+      </ul>
+    </div>
+  </div>
+</nav>

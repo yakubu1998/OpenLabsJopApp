@@ -1,0 +1,62 @@
+{% extends './base.html' %}
+{% load static %}
+{% block content %}
+
+
+<div class="profile_row">
+    <div class="profile"> 
+        <!-- <h5>My Profile</h5> -->
+        <div class="main_profile">
+            <div class="profile_img">
+                <img src="{{object.employerprofile.profile_image.url}}" alt="Profile-image">
+            </div>
+            <div class="name">
+                <h5>
+
+                    {{ object.employerprofile.company_name }}
+                </h5>
+                {% if request.user.id == object.id %}
+                <a href="{% url 'editEmployerProfile' %}">
+                    <p>Edit Profile</p>
+                </a>
+                {% endif %}
+            </div>
+        </div>
+ 
+        <div class="profile_nav">
+            <div class="profile_nav_row">
+                <a href="{% url 'employerProfile' object.id %}" class="about">About</a>
+                <a href="{% url 'employerProfileJobs' object.id %}" class="profile_upload_jobs">Uploaded Jobs</a>
+                <a href="{% url 'employerProfileIntenships' object.id %}" class="profile_upload_intenships">Uploaded Intenships</a>
+            </div>
+        </div>
+
+        <div class="about_profile">
+            <h5>About Us</h5>
+            <div class="education">
+               <h6>Company Name</h6>
+                <p>{{ object.employerprofile.company_name }}</p>
+            </div>
+            <hr>
+            <div class="location">
+                <h6>Contacts</h6>
+                <p>{{ object.contact }}</p>
+                <p>{{ object.email }}</p>
+                <p>{{ object.employerprofile.website }}</p>
+            </div>
+            <hr>
+            <div class="location">
+                <h6>Location</h6>
+                <p>{{ object.employerprofile.country }}</p>
+                <p>{{ object.employerprofile.region }}</p>
+                <p>{{ object.employerprofile.address }}</p>
+            </div>
+            
+        </div>
+        
+    </div>
+</div>
+
+ 
+
+{% endblock content %}

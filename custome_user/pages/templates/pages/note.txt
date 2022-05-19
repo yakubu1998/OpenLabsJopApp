@@ -1,0 +1,154 @@
+<form method="POST" enctype="multipart/form-data">
+             {% csrf_token %}
+            <!-- <p>Please login to your account</p> -->
+            <fieldset>
+                <div class="form-outline mb-4">
+                    <input type="text" name="firstName" id="form2Example11" class="form-control"
+                        placeholder="" required/>
+                    <label class="form-label" for="form2Example11">First Name</label>
+                </div>
+                <div class="form-outline mb-4">
+                    <input type="text" name="lastName" id="form2Example11" class="form-control"
+                        placeholder="Last name" required/>
+                    <label class="form-label" for="form2Example11">Last Name</label>
+                </div>
+                <div class="form-outline mb-4">
+                    <input type="email" name="email" id="form2Example11" class="form-control"
+                        placeholder="email address" required value="{{request.user}}"/>
+                    <label class="form-label" for="form2Example11">Email</label>
+                </div>
+                <div class="form-outline mb-4">
+                    <input type="date" name="dateOfBirth" id="form2Example11" class="form-control"
+                        placeholder="date of birth" required />
+                    <label class="form-label" for="form2Example11">Date of Birth</label>
+                </div>
+                <div class="form-outline mb-4">
+                    <input type="text" name="nationality" id="form2Example11" class="form-control"
+                    placeholder="" required value="Ghanaian"/>
+                    <label class="form-label" for="form2Example11">Nationality</label>
+                </div>
+                <div class="form-outline">
+                    <label>Gender</label>
+                    <select name="gender" class="form-group"
+                      style="width: 100%; margin-bottom: 20px; padding: 6px 2px;">
+                      <option value="Male">Male</option>
+                      <option value="Female">Female</option>              
+                    </select>
+                </div> 
+
+
+                <div class="form-outline">
+                    <label>Location</label>
+                    <select class="form-group" name="location" placeholder="Select a State"
+                      style="width: 100%; margin-bottom: 20px; padding: 6px 2px;">
+                      <option value="Tamale">Northern Region, Tamale</option>
+                      <option value="Alaska">Alaska</option>
+                      
+                    </select>
+                </div>    
+
+                <div class="form-outline mb-4">
+                    <input type="file" name="profileImage" id="form2Example11" class="form-control"
+                        placeholder="Upload profileImage" />
+                    <!-- <label class="form-label" for="form2Example11"></label> -->
+                </div>
+     
+            </fieldset>
+
+
+
+            <!-- <fieldset >
+                <legend>Work Information</legend>
+                <div class="form-outline mb-4">
+                    <input type="text" name="lastName" id="form2Example11" class="form-control"
+                        placeholder="Last name" required/>
+                    <label class="form-label" for="form2Example11">Highest Qualification</label>
+                </div>
+                <div class="form-outline mb-4">
+                    <input type="text" name="lastName" id="form2Example11" class="form-control"
+                        placeholder="Last name" required/>
+                    <label class="form-label" for="form2Example11">Last Name</label>
+                </div>
+                <div class="form-outline mb-4">
+                    <input type="text" name="lastName" id="form2Example11" class="form-control"
+                        placeholder="Last name" required/>
+                    <label class="form-label" for="form2Example11">Last Name</label>
+                </div>
+
+            </fieldset> -->
+
+            
+
+            <div class="text-center pt-1 mb-5 pb-1">
+                
+                <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3"
+                    type="submit">
+                    Update
+                </button>
+            </div>
+        </form>
+
+
+
+
+
+
+
+
+
+
+
+          <fieldset>
+                <div class="form-outline mb-4">
+                    
+                    <!-- <input type="text" name="firstName" id="form2Example11" class="form-control"
+                        placeholder="" required/>
+                    <label class="form-label" for="form2Example11">First Name</label> -->
+                </div>
+                <div class="form-outline mb-4">
+                    <!-- <input type="text" name="lastName" id="form2Example11" class="form-control"
+                        placeholder="Last name" required/>
+                    <label class="form-label" for="form2Example11">Last Name</label> -->
+                </div>
+                <div class="form-outline mb-4">
+                    <!-- <input type="email" name="email" id="form2Example11" class="form-control"
+                        placeholder="email address" required value="{{request.user}}"/>
+                    <label class="form-label" for="form2Example11">Email</label> -->
+                </div>
+                <div class="form-outline mb-4">
+                    <!-- <input type="date" name="dateOfBirth" id="form2Example11" class="form-control"
+                        placeholder="date of birth" required />
+                    <label class="form-label" for="form2Example11">Date of Birth</label> -->
+                </div>
+                <div class="form-outline mb-4">
+                    <!-- <input type="text" name="nationality" id="form2Example11" class="form-control"
+                    placeholder="" required value="Ghanaian"/>
+                    <label class="form-label" for="form2Example11">Nationality</label> -->
+                </div>
+                <div class="form-outline">
+                    <!-- <label>Gender</label>
+                    <select name="gender" class="form-group"
+                      style="width: 100%; margin-bottom: 20px; padding: 6px 2px;">
+                      <option value="Male">Male</option>
+                      <option value="Female">Female</option>              
+                    </select> -->
+                </div> 
+
+
+                <div class="form-outline">
+                    <!-- <label>Location</label>
+                    <select class="form-group" name="location" placeholder="Select a State"
+                      style="width: 100%; margin-bottom: 20px; padding: 6px 2px;">
+                      <option value="Tamale">Northern Region, Tamale</option>
+                      <option value="Alaska">Alaska</option>
+                      
+                    </select> -->
+                </div>    
+
+                <div class="form-outline mb-4">
+                    <!-- <input type="file" name="profileImage" id="form2Example11" class="form-control"
+                        placeholder="Upload profileImage" /> -->
+                    <!-- <label class="form-label" for="form2Example11"></label> -->
+                </div>
+     
+            </fieldset>

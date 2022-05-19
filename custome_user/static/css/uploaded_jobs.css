@@ -1,0 +1,14 @@
+.uploaded_jobs_profile .uploaded_jobs{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+}
+
+.uploaded_jobs_profile .uploaded_jobs div{
+    /* background: rgb(48, 47, 47); */
+    margin-left: 30px;
+    flex-basis: 30%;
+    margin-bottom: 50px;
+}

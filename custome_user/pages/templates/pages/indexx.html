@@ -1,0 +1,129 @@
+{% extends './base.html' %}
+{% load static %}
+{% block content %}
+{% load crispy_forms_tags %}
+<!-- <img src="" alt=""> -->
+<div class="bg">
+      <h1>We help you find the right jobs/intenships</h1>  
+
+      <div class="banner_search">
+         
+      </div>
+
+         
+</div>
+
+
+<div class="container">
+   <h2 style="text-align: center; margin-top: 90px; margin-bottom: 40px;">Available Jobs</h2>
+   <div class="uploaded_jobs_profile">
+      <div class="uploaded_jobs">
+         {% for post in posts %}
+            {% if post.category != 'Intenship' %}
+
+            <div> 
+               <img src="{% static 'img/OpenLabs.jpg' %}" class="company_logo" alt="">
+               <a href="{% url 'postDetail' post.id %}">{{ post.job_title }}</a>
+               <br>
+               <a href="{% url 'employerProfileJobs' post.company.id %}">{{ post.company.employerprofile }}</a>
+               <h5>{{ post.category }}r</h5>
+               <h5>{{ post.location }}</h5>
+               <p>{{ post.date_posted }}</p>               
+            </div>
+            {% endif %}
+         {% endfor %}   
+         
+         
+      </div>
+      {% if is_paginated %}
+
+         {% if page_obj.has_previous %}
+            <a href="?page=1"><button>First</button></a>
+            <a href="?page={{ page_obj.previous_page_number }}"><button>previous</button></a>
+         {% endif %}
+
+
+         {% for num in page_obj.paginator.page_range%}
+
+            {% if page_obj.number == num %}
+               <a href="?page={{ num }}">{{ num }}</a>
+            {% elif num > page_obj.number|add:'-3' and  num < page_obj.number|add:'3'%}
+               <a style="color:red ;" href="?page={{ num }}">{{ num }}</a>   
+            {% endif %}
+
+         {% endfor %}
+
+
+         {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}"><button>Next</button></a>
+            <a href="?page={{ page_obj.paginator.num_pages }}"><button>Last</button></a>
+         {% endif %}
+
+
+
+
+      {% endif  %}
+      
+   </div>
+
+   <!-- intenship contents -->
+
+   <h2 style="text-align: center; margin-top: 90px; margin-bottom: 40px;">Available Intenships</h2>
+   <div class="uploaded_jobs_profile">
+      <div class="uploaded_jobs">
+            <div>
+               <img src="{% static 'img/OpenLabs.jpg' %}" class="company_logo" alt="">
+               <h4>Android Developer</h4>
+               <h5>OpenLabs Tamale</h5>
+               <h5>Job Offer</h5>
+               <h5>Tamale</h5>
+               <p>Posted On : 12-01-2020</p>               
+            </div>
+            <div>
+               <img src="{% static 'img/OpenLabs.jpg' %}" class="company_logo" alt="">
+               <h4>Android Developer</h4>
+               <h5>OpenLabs Tamale</h5>
+               <h5>Job Offer</h5>
+               <h5>Tamale</h5>
+               <p>Posted On : 12-01-2020</p>               
+            </div>
+            <div>
+               <img src="{% static 'img/OpenLabs.jpg' %}" class="company_logo" alt="">
+               <h4>Android Developer</h4>
+               <h5>OpenLabs Tamale</h5>
+               <h5>Job Offer</h5>
+               <h5>Tamale</h5>
+               <p>Posted On : 12-01-2020</p>               
+            </div>
+            <div>
+               <img src="{% static 'img/OpenLabs.jpg' %}" class="company_logo" alt="">
+               <h4>Android Developer</h4>
+               <h5>OpenLabs Tamale</h5>
+               <h5>Job Offer</h5>
+               <h5>Tamale</h5>
+               <p>Posted On : 12-01-2020</p>               
+            </div>
+            <div>
+               <img src="{% static 'img/OpenLabs.jpg' %}" class="company_logo" alt="">
+               <h4>Android Developer</h4>
+               <h5>OpenLabs Tamale</h5>
+               <h5>Job Offer</h5>
+               <h5>Tamale</h5>
+               <p>Posted On : 12-01-2020</p>               
+            </div>
+            <div>
+               <img src="{% static 'img/OpenLabs.jpg' %}" class="company_logo" alt="">
+               <h4>Android Developer</h4>
+               <h5>OpenLabs Tamale</h5>
+               <h5>Job Offer</h5>
+               <h5>Tamale</h5>
+               <p>Posted On : 12-01-2020</p>               
+            </div>
+            
+      </div>
+      
+   </div>
+</div>
+
+
+{% endblock content %} 

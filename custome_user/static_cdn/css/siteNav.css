@@ -1,0 +1,181 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --blacklight: rgb(60, 64, 67);
+  --whitelight: rgb(255, 255, 255);
+  --sky: rgb(60, 64, 67);
+  --bs-primary: rgb(7, 18, 44);
+  --darkblue: rgb(7, 18, 44);
+  --bg-color: #ececec;
+} 
+
+.flex-row {
+  display: flex;
+  /* flex-wrap: wrap; */
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+nav {
+  height: 5rem;
+  padding: 1rem 3rem;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);
+  /* background: var(--whitelight); */
+  /* background: rgb(30, 187, 184); */
+  position: sticky;
+  transition: all 0.8s;
+  /* z-index: 1000; */
+  width: 100%;
+  right: 0;
+  /* margin-bottom: 0rem; */
+}
+/* .myNavigation{
+  width: 100%;
+  transition: all 0.8s;
+
+} */
+
+.nav-menu {
+  justify-content: space-between;
+  position: relative;
+  
+  /* background: rgb(184, 181, 39); */
+}
+.nav-menu .nav-container{
+  flex-basis: 50%;
+}
+
+.nav-menu .nav-brand a {
+  display: block;
+  font-size: 1.7rem;
+  padding: 1rem 0;
+  color: var(--sky);
+  /* background: rgb(0, 0, 0); */
+}
+.nav-menu .nav-brand a:hover {
+  color: var(--bs-primary);
+}
+
+.nav-menu .toggle-collapse {
+  position: absolute;
+  width: 90%;
+  cursor: pointer;
+  display: none;
+  /* background: rgb(167, 31, 31); */
+}
+
+.nav-menu .toggle-collapse .toggle-icons {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1.7rem;
+  font-size: 1.4rem;
+  /* background: rgb(170, 20, 20); */
+}
+
+.nav-menu .nav-items {
+  /* background: rgb(66, 26, 177); */
+  display: flex;
+  justify-content: center;
+}
+
+.nav-menu .nav-items .nav-link {
+  /* background: rgb(216, 115, 115); */
+  padding: 1.6rem 1rem;
+}
+
+.nav-menu .nav-items .nav-link a {
+  color: var(--bs-primary);
+  font-size: 1.3rem;
+}
+
+.nav-menu .nav-items .nav-link a:hover {
+  color: var(--sky);
+}
+
+.nav-menu .social {
+  /* padding: 1.4rem 1rem 1.4rem 4rem; */
+  /* background: rgb(14, 156, 85); */
+  flex-basis: 15%;
+  justify-content: space-around;
+  
+}
+.nav-menu .social a{
+  font-size: 1.3rem;
+  padding:0rem 1rem 1.6rem;
+  /* background: rgb(68, 33, 114); */
+}
+
+.profile-image{
+  width: 3.9rem;
+  height: 3.9rem;
+  /* background: rgb(128, 13, 13); */
+}
+.profile-image img{
+  width: 100%;
+  border-radius: 50px  ;
+  /* display: none; */
+
+  /* height: 0.3rem; */
+}
+
+/* styling navigation bar */
+
+
+/* <a href="#">Login</a>
+<span>/</span>
+<a href="#">SignUp</a>
+<div class="profile-image">
+    <img src="{{request.user.profile_img.url}}" alt="" width="40" height="40">
+</div> */
+
+/* <img src="{{request.user.profile_image.url}}" alt="" width="40" height="40"> */
+
+
+
+
+
+/* div.big {
+  background-image: url("../assets/img/theater-bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 70vh;
+
+  margin-bottom: 5rem;
+} */
+
+/* main {
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 10rem;
+}
+
+h2 {
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  color: rgb(248, 247, 243);
+}
+
+.slide {
+  width: 100%;
+  display: flexbox;
+  flex-direction: row;
+  flex-wrap: wrap;
+  
+}
+
+.slide img {
+  width: 15%;
+  height: 300px;
+  margin: 0 1.2% 0 0;
+} */

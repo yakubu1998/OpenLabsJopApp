@@ -1,0 +1,89 @@
+{% extends './base.html' %}
+{% load static %}
+{% block content %}
+ 
+
+<div class="profile_row">
+    <div class="profile">
+        <!-- <h5>My Profile {{ view.kwargs.pk }}</h5> -->
+        <div class="main_profile">
+            <div class="profile_img">
+                <img src="{{user.employerprofile.profile_image.url}}" alt="Profile-image">
+            </div>
+            <div class="name">
+                <!-- <h4>{{request.user.employerprofile.company_name}}</h4> -->
+                <h4>{{user.employerprofile}}</h4>
+                {% if request.user.id == user.id %}
+                <a href="{% url 'editEmployerProfile' %}">
+                    <h6>Edit Profile</h6>
+                </a>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="profile_nav">
+            <div class="profile_nav_row">
+            
+                <a href="{% url 'employerProfile' user.id %}" class="about">About</a>
+                
+                <a href="{% url 'employerProfileJobs' user.id %}" class="profile_upload_jobs">Uploaded Jobs</a>
+                
+                
+                <a href="{% url 'employerProfileIntenships' user.id %}" class="profile_upload_intenships">Uploaded Intenships</a>
+           
+            </div>
+        </div>
+
+        <!-- <div class="uploaded_jobs_profile">
+            <div class="uploaded_jobs">
+            {% for post in posts %}
+                {% if post.category != 'Intenship' %}
+                <div>
+                    <a href="{% url 'postDetail' post.id %}">
+                        <h4>{{ post.job_title }}</h4>
+                    </a>    
+                    <h5>{{ post.category }}</h5>
+                    <p>{{ post.date_posted }}</p>
+                    <a href="{% url 'postDetail' post.id %}"><h6>Check Details</h6></a>
+                </div>
+                {% endif %}
+            {% endfor %}    
+            </div>
+            
+        </div> -->
+        
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        {% for post in posts %}
+            {% if post.category == 'Intenship' %}
+        <div class="col-md-12 ftco-animate fadeInUp ftco-animated">
+            <div class="job-post-item bg-white p-4 d-block d-md-flex align-items-center">
+                <div class="mb-4 mb-md-0 mr-5">
+                    <div class="job-post-item-header d-flex align-items-center">
+                        <a style="color:black !important" href="{% url 'postDetail' post.id %}"><h2 class="mr-3 text-black h3">{{ post.job_title }}</h2></a>
+                        <div class="badge-wrap">
+                            <span class="bg-primary text-white badge py-2 px-3">{{ post.category }}</span>
+                        </div>
+                    </div>
+                    <div class="job-post-item-body d-block d-md-flex">
+                        <div class="mr-3"><span class="icon-layers"></span> <a href="{% url 'employerProfileJobs' post.company.id %}">{{ post.company.employerprofile }}</a></div>
+                        <div><span class="icon-my_location"></span> <span>{{ post.location }}</span></div>
+                    </div>
+                </div>
+                <div class="ml-auto d-flex">
+                    <a href="job-single.html" class="btn btn-primary py-2 mr-1">Apply Job</a>
+ 
+                </div>
+            </div>
+        </div>
+            {% endif %}
+        {% endfor %} 
+    </div>
+ </div>
+
+
+
+{% endblock content %}
